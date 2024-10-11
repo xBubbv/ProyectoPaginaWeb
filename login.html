@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
     <title>Login</title>
 </head>
 <body>
-    <header style="border-bottom: 1px solid lightgray; padding-bottom: 20px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border: 1px solid lightgray; background-color: #003366;" >
+    <header>
+        <div class="cnav">
             <div>
-                <a href="index.html"><img src="./img/Logo.png" alt="Logo empresa" style="height: 100px; border-radius: 15px; padding: 10px;"></a>
+                <a href="index.html"><img src="./img/Logo.png" alt="Logo empresa" id="logo"></a>
             </div>
             <nav>
-                <a href="index.html" style="padding: 10px 20px; border: 2px solid black; background-color: white; border-radius: 15px; text-decoration: none; margin: 10px;">Inicio</a>
-                <a href="login.html" style="padding: 10px 20px; border: 2px solid black; background-color: white; border-radius: 15px; text-decoration: none; margin: 10px;">Registro</a>
+                <a href="index.html" class="button">Inicio</a>
+                <a href="login.html" class="button">Registro</a>
             </nav>
         </div>
     </header>
-    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; padding-top: 20px;">
-        <img src="./img/index-banner.jpg" alt="Banner" style="width: 100%; height: 500px; object-fit: cover; object-position: 50% 45%;padding-bottom: 10px;">
+    <div class="cbanner">
+        <img src="./img/index-banner.jpg" alt="Banner" id="banner">
     </div>
-    <div style="display: block; align-items: center; text-align: center; border-radius: 15px; border: 1px solid orange; margin: 0% 40%; padding: 10px 10px;">
-        <h1 style="color: orange;">Login</h1>
+    <div class="c-login">
+        <h1>Login</h1>
         <form action="registro.html">
-
-            <div style="align-items: end;">
-                <div style="padding: 10px;">
+            <div class="c-form">
+                <div>
                     <label for="first">Usuario:</label>
                     <input type="text" id="first" name="first" placeholder="Ingrese su usuario" required>
                 </div>
-                <div style="padding: 10px;">
+                <div>
                     <label for="password">Contraseña:</label>
                     <input type="password" name="password" id="password" placeholder="Ingrese su contraseña" required>
                 </div>
@@ -40,33 +40,34 @@
 
         </form>
     </div>
-    <footer style="padding-top:20px ;">
-        <div style="display: flex; justify-content: space-between; align-items: center; background-color: black;">
-            <div style="padding-left: 200px;">
-                <h1 style="color: white;">Contacto</h1>
-                <p style="color: white; font-size: 20px;">alvarezyvaraspropiedades@gmail.com</p>
-                <p style="color: white; font-size: 20px;">+56 9 11223344</p>
+    <footer>
+        <div class="cfooter">
+            <div>
+                <h1>Contacto</h1>
+                <p>alvarezyvaraspropiedades@gmail.com</p>
+                <p>+56 9 11223344</p>
             </div>
             <div >
-                <h1 style="color: white;">Servicios</h1>
-                <p><a href="#" style="color: white; font-size: 20px;">Confienos su propiedad</a></p>
-                <p><a href="#" style="color: white; font-size: 20px;">Servicios adicionales</a></p>
-                <p><a href="#" style="color: white; font-size: 20px;">Trabaje con nosotros</a></p>
+                <h1>Servicios</h1>
+                <p><a href="#" >Confienos su propiedad</a></p>
+                <p><a href="#" >Servicios adicionales</a></p>
+                <p><a href="#" >Trabaje con nosotros</a></p>
             </div>
-            <div style="padding-right: 200px;">
-                <h1 style="color: white;">Propiedades</h1>
-                <p><a href="#" style="color: white; font-size: 20px;">Casas</a></p>
-                <p><a href="#" style="color: white; font-size: 20px;">Departamentos</a></p>
-                <p><a href="#" style="color: white; font-size: 20px;">Terrenos</a></p>
+            <div>
+                <h1>Propiedades</h1>
+                <p><a href="#" >Casas</a></p>
+                <p><a href="#" >Departamentos</a></p>
+                <p><a href="#" >Terrenos</a></p>
             </div>
-            <div style="padding-right: 20px;">
-                <a href="https://web.whatsapp.com/"><img src="./img/ico-whatsapp.png" alt=""></p>
-                <a href="https://www.facebook.com/"><img src="./img/ico-facebook.png" alt=""></p>
-                <a href="https://www.instagram.com/accounts/login/"><img src="./img/ico-instagram.png" alt=""></p>
+            <div>
+                <p><a href="https://web.whatsapp.com/"><img src="./img/ico-whatsapp.png" alt="Whatsapp"></a></p>
+                <p><a href="https://www.facebook.com/"><img src="./img/ico-facebook.png" alt="Facebook"></a></p>
+                <p><a href="https://www.instagram.com/accounts/login/"><img src="./img/ico-instagram.png" alt="Instagram"></a></p>
             </div>
         </div>
-        <div style="background-color: black; ">
-            <p style="color: white; text-align: center;">&copy; 2024 Diego Vargas</p>
+        <div id="marca">
+            <p >&copy; 2024 Diego Vargas</p>
         </div>
+    </footer>
 </body>
 </html>
