@@ -3,74 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/">
+    <link rel="stylesheet" href="/css/index.css">
     <title>Inicio</title>
 </head>
 <body>
-    <header style="border-bottom: 1px solid lightgray; padding-bottom: 20px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border: 1px solid lightgray; background-color: #003366;" >
+    <header>
+        <div class="cnav">
             <div>
-                <a href="index.html"><img src="./img/Logo.png" alt="Logo empresa" style="height: 100px; border-radius: 15px; padding: 10px;"></a>
+                <a href="index.html"><img src="./img/Logo.png" alt="Logo empresa" id="logo"></a>
             </div>
             <nav>
-                <a href="index.html" style="padding: 10px 20px; border: 2px solid black; background-color: white; border-radius: 15px; text-decoration: none; margin: 10px;">Inicio</a>
-                <a href="login.html" style="padding: 10px 20px; border: 2px solid black; background-color: white; border-radius: 15px; text-decoration: none; margin: 10px;">Registro</a>
+                <a href="index.html" class="button">Inicio</a>
+                <a href="login.html" class="button">Registro</a>
             </nav>
         </div>
     </header>
-    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; padding-top: 20px;">
-        <img src="./img/index-banner.jpg" alt="Banner" style="width: 100%; height: 500px; object-fit: cover; object-position: 50% 45%;padding-bottom: 10px;">
+    <div class="cbanner">
+        <img src="./img/index-banner.jpg" alt="Banner" id="banner">
     </div>
-    <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
-        <div style="padding-left: 30px; width: 33%;">
-            <img src="./img/asesoria.png" alt="" style="width: 550px; height: 300px">
-            <p style="text-align: justify; padding-right: 45px; font-size: 20px">¿Estás en busca de tu nuevo hogar ideal? No te preocupes, estamos aquí para ofrecerte una asesoría personalizada y profesional. Nuestro equipo de expertos certificados te acompañará en cada paso del proceso, asegurando que tomes la mejor decisión con confianza y tranquilidad.</p>
+    <div class="cbody">
+        <div class="elem1">
+            <img src="./img/asesoria.png" alt="Asesoria 1">
+            <p>¿Estás en busca de tu nuevo hogar ideal? No te preocupes, estamos aquí para ofrecerte una asesoría personalizada y profesional. Nuestro equipo de expertos certificados te acompañará en cada paso del proceso, asegurando que tomes la mejor decisión con confianza y tranquilidad.</p>
         </div>
-        <div style="width: 33%; padding-top: 20px;">
-            <iframe width="550px" height="300px" src="https://www.youtube.com/embed/6CesFj_9LYo?si=AObsHmdrF44V4ZqN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p style="text-align: justify; padding-right: 45px; font-size: 20px">Descubre todo lo que nuestra inmobiliaria tiene para ofrecerte en este video promocional. Desde asesoría personalizada hasta la mejor gestión para la compra, venta o arriendo de propiedades, te acompañamos en cada paso para que encuentres el hogar de tus sueños o saques el máximo provecho a tu inversión. ¡Tu próximo destino comienza aquí!</p>
+        <div class="elem2">
+            <iframe src="https://www.youtube.com/embed/6CesFj_9LYo?si=AObsHmdrF44V4ZqN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>Descubre todo lo que nuestra inmobiliaria tiene para ofrecerte en este video promocional. Desde asesoría personalizada hasta la mejor gestión para la compra, venta o arriendo de propiedades, te acompañamos en cada paso para que encuentres el hogar de tus sueños o saques el máximo provecho a tu inversión. ¡Tu próximo destino comienza aquí!</p>
         </div>
-        <div style=" padding-right: 30px; width: 33%;">
-            <img src="./img/asesoria2.jpeg" alt="" style=" height: 300px;">
-            <p style="text-align: justify; padding-right: 25px; font-size: 20px;">¿Tienes una propiedad y no sabes por dónde empezar? Déjala en nuestras manos. Nos encargamos de encontrar al mejor arrendatario o comprador potencial, gestionando todo el proceso con profesionalismo y dedicación, para que obtengas los mejores resultados sin preocupaciones.</p>
+        <div class="elem3">
+            <img src="./img/asesoria2.jpeg" alt="Asesoria 2">
+            <p>¿Tienes una propiedad y no sabes por dónde empezar? Déjala en nuestras manos. Nos encargamos de encontrar al mejor arrendatario o comprador potencial, gestionando todo el proceso con profesionalismo y dedicación, para que obtengas los mejores resultados sin preocupaciones.</p>
         </div>
-    </div>
-    <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: lightgray;">
-        <div style="width: 30%;">
+        <div class="elem4">
             <img src="./img/logo.jpeg" alt="Logo empresa">
         </div>
-        <div style="width: 70%; ">
-            <h1 style="text-align: center;"> ÁLVAREZ Y VARAS PROPIEDADES</h1>
-            <p style="padding: 10px; font-size: 20px; text-align: justify;">En Álvarez y Varas Propiedades, ubicados en Copiapó, contamos con un equipo de profesionales comprometidos con el sector inmobiliario de la región de Atacama. Nuestra experiencia y conocimiento en la venta y arriendo de propiedades nos permiten ofrecer un servicio personalizado y de alta calidad. Acompañamos a nuestros clientes en cada etapa del proceso, desde la búsqueda del hogar perfecto hasta la gestión integral de propiedades. Nuestro objetivo es brindar una experiencia excepcional, basada en la transparencia y la confianza, para garantizar la satisfacción en cada transacción. Nos sentimos orgullosos de ayudar a las personas a alcanzar sus sueños inmobiliarios, ya sea que busquen casas, departamentos, parcelas u otros tipos de propiedades en Copiapó y sus alrededores.</p>            
+        <div class="elem5">
+            <h1> ÁLVAREZ Y VARAS PROPIEDADES</h1>
+            <p>En Álvarez y Varas Propiedades, ubicados en Copiapó, contamos con un equipo de profesionales comprometidos con el sector inmobiliario de la región de Atacama. Nuestra experiencia y conocimiento en la venta y arriendo de propiedades nos permiten ofrecer un servicio personalizado y de alta calidad. Acompañamos a nuestros clientes en cada etapa del proceso, desde la búsqueda del hogar perfecto hasta la gestión integral de propiedades. Nuestro objetivo es brindar una experiencia excepcional, basada en la transparencia y la confianza, para garantizar la satisfacción en cada transacción. Nos sentimos orgullosos de ayudar a las personas a alcanzar sus sueños inmobiliarios, ya sea que busquen casas, departamentos, parcelas u otros tipos de propiedades en Copiapó y sus alrededores.</p>            
         </div>
     </div>
-    <footer style="padding-top:20px ;">
-        <div style="display: flex; justify-content: space-between; align-items: center; background-color: black;">
-            <div style="padding-left: 200px;">
-                <h1 style="color: white;">Contacto</h1>
-                <p style="color: white; font-size: 20px;">alvarezyvaraspropiedades@gmail.com</p>
-                <p style="color: white; font-size: 20px;">+56 9 11223344</p>
+    <footer>
+        <div class="cfooter">
+            <div>
+                <h1>Contacto</h1>
+                <p>alvarezyvaraspropiedades@gmail.com</p>
+                <p>+56 9 11223344</p>
             </div>
             <div >
-                <h1 style="color: white;">Servicios</h1>
-                <p><a href="#" style="color: white; font-size: 20px;">Confienos su propiedad</a></p>
-                <p><a href="#" style="color: white; font-size: 20px;">Servicios adicionales</a></p>
-                <p><a href="#" style="color: white; font-size: 20px;">Trabaje con nosotros</a></p>
+                <h1>Servicios</h1>
+                <p><a href="#" >Confienos su propiedad</a></p>
+                <p><a href="#" >Servicios adicionales</a></p>
+                <p><a href="#" >Trabaje con nosotros</a></p>
             </div>
-            <div style="padding-right: 200px;">
-                <h1 style="color: white;">Propiedades</h1>
-                <p><a href="#" style="color: white; font-size: 20px;">Casas</a></p>
-                <p><a href="#" style="color: white; font-size: 20px;">Departamentos</a></p>
-                <p><a href="#" style="color: white; font-size: 20px;">Terrenos</a></p>
+            <div>
+                <h1>Propiedades</h1>
+                <p><a href="#" >Casas</a></p>
+                <p><a href="#" >Departamentos</a></p>
+                <p><a href="#" >Terrenos</a></p>
             </div>
-            <div style="padding-right: 20px;">
-                <a href="https://web.whatsapp.com/"><img src="./img/ico-whatsapp.png" alt=""></p>
-                <a href="https://www.facebook.com/"><img src="./img/ico-facebook.png" alt=""></p>
-                <a href="https://www.instagram.com/accounts/login/"><img src="./img/ico-instagram.png" alt=""></p>
+            <div>
+                <p><a href="https://web.whatsapp.com/"><img src="./img/ico-whatsapp.png" alt="Whatsapp"></a></p>
+                <p><a href="https://www.facebook.com/"><img src="./img/ico-facebook.png" alt="Facebook"></a></p>
+                <p><a href="https://www.instagram.com/accounts/login/"><img src="./img/ico-instagram.png" alt="Instagram"></a></p>
             </div>
         </div>
-        <div style="background-color: black; ">
-            <p style="color: white; text-align: center;">&copy; 2024 Diego Vargas</p>
+        <div id="marca">
+            <p >&copy; 2024 Diego Vargas</p>
         </div>
     </footer>
 </body>
