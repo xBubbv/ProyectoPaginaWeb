@@ -1,0 +1,28 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    font-size: 25px;
+    margin: 5% 40%;
+}
+form div{
+    padding: 10px;
+}
+#codigo{
+    width: 30px;
+}
+.opciones{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+#l1{
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+}
+#btn{
+    background-color: cyan;
+    padding: 5px 25px 5px 25px;
+    font-size: 15px;
+}
