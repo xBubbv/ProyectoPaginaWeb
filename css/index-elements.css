@@ -65,3 +65,92 @@ p{
 .elem5 p{
     padding: 10px;
 }
+
+/* Nuevos elementos */
+
+.carousel{
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+.slides{
+    display: flex;
+    width: 200%;
+    animation: slide 6s infinite alternate;
+    position: relative;
+}
+.slide{
+    width: 100vw;
+    flex-shrink: 0;
+    position: relative;
+}
+.slide img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+@keyframes slide{
+    0%{transform: translateX(0);}
+    45%{transform: translateX(0);}
+    55%{transform: translateX(-100vw);}
+    100%{transform: translateX(-100vw);}
+}
+.header-content{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    background-color: gainsboro;
+}
+.header-text{
+    justify-items: right;
+}
+.header-text p{
+    font-size: 1.2rem;
+    color: #555;
+}
+.cnav{
+    justify-content: center;
+    border: 0;
+}
+.cnav a{
+    text-decoration: none;
+    margin: 20px;
+}
+.buscador-prop {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.buscador-prop h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.buscador-prop form {
+    display: inline-block;
+}
+.buscador-prop label{
+    color: black;
+}
+.buscador-prop input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.buscador-prop button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buscador-prop button:hover {
+    background-color: #0056b3;
+}

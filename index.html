@@ -8,41 +8,46 @@
 </head>
 <body>
     <header>
-        <div class="cnav">
-            <div>
-                <a href="index.html"><img src="./img/Logo.png" alt="Logo empresa" id="logo"></a>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html"><img src="img/Logo.png" alt="Logo empresa" id="logo"></a>
             </div>
-            <nav>
-                <a href="index.html" class="button">Inicio</a>
-                <a href="login.html" class="button">Registro</a>
-                <a href="nosotros.html" class="button">Nosotros</a>
-            </nav>
+            <div class="header-text">
+                <p>Hablemos!</p>
+                <p>+56911223344 | +56955667788</p>
+            </div>
         </div>
+        
     </header>
-    <div class="cbanner">
-        <img src="./img/index-banner.jpg" alt="Banner" id="banner">
-    </div>
-    <div class="cbody">
-        <div class="elem1">
-            <img src="./img/asesoria.png" alt="Asesoria 1">
-            <p>¿Estás en busca de tu nuevo hogar ideal? No te preocupes, estamos aquí para ofrecerte una asesoría personalizada y profesional. Nuestro equipo de expertos certificados te acompañará en cada paso del proceso, asegurando que tomes la mejor decisión con confianza y tranquilidad.</p>
-        </div>
-        <div class="elem2">
-            <iframe src="https://www.youtube.com/embed/6CesFj_9LYo?si=AObsHmdrF44V4ZqN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p>Descubre todo lo que nuestra inmobiliaria tiene para ofrecerte en este video promocional. Desde asesoría personalizada hasta la mejor gestión para la compra, venta o arriendo de propiedades, te acompañamos en cada paso para que encuentres el hogar de tus sueños o saques el máximo provecho a tu inversión. ¡Tu próximo destino comienza aquí!</p>
-        </div>
-        <div class="elem3">
-            <img src="./img/asesoria2.jpeg" alt="Asesoria 2">
-            <p>¿Tienes una propiedad y no sabes por dónde empezar? Déjala en nuestras manos. Nos encargamos de encontrar al mejor arrendatario o comprador potencial, gestionando todo el proceso con profesionalismo y dedicación, para que obtengas los mejores resultados sin preocupaciones.</p>
-        </div>
-        <div class="elem4">
-            <img src="./img/logo.jpeg" alt="Logo empresa">
-        </div>
-        <div class="elem5">
-            <h1> ÁLVAREZ Y VARAS PROPIEDADES</h1>
-            <p>En Álvarez y Varas Propiedades, ubicados en Copiapó, contamos con un equipo de profesionales comprometidos con el sector inmobiliario de la región de Atacama. Nuestra experiencia y conocimiento en la venta y arriendo de propiedades nos permiten ofrecer un servicio personalizado y de alta calidad. Acompañamos a nuestros clientes en cada etapa del proceso, desde la búsqueda del hogar perfecto hasta la gestión integral de propiedades. Nuestro objetivo es brindar una experiencia excepcional, basada en la transparencia y la confianza, para garantizar la satisfacción en cada transacción. Nos sentimos orgullosos de ayudar a las personas a alcanzar sus sueños inmobiliarios, ya sea que busquen casas, departamentos, parcelas u otros tipos de propiedades en Copiapó y sus alrededores.</p>            
+    <nav class="cnav">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Registro</a>
+        <a href="nosotros.html">Nosotros</a>
+    </nav>
+    <div class="carousel">
+        <div class="slides">
+            <div class="slide">
+                <img src="img/carousel1.jpg" alt="Imagen 1">
+                <div class="caption">
+                    <h2>Disfrute de un nuevo espacio para su familia!</h2>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="img/carousel2.jpg" alt="Imagen 2">
+            </div>
         </div>
     </div>
+    
+    <section class="buscador-prop">
+        <h2>Busca tu propiedad</h2>
+        <form action="#">
+            <label for="sector">Sector</label>
+            <input type="text" name="sector" placeholder="Ingrese sector">
+            <label for="servicio">Servicio</label>
+            <input type="text" name="servicio" placeholder="Ingrese servicio">
+            <button type="submit">Buscar</button>
+        </form>
+    </section>
     <footer>
         <div class="cfooter">
             <div>
