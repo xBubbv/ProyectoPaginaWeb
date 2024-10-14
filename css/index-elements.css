@@ -67,7 +67,9 @@ p{
 }
 
 /* Nuevos elementos */
-
+body{
+    background-color: rgb(218, 215, 205);
+}
 .carousel{
     width: 100%;
     height: 600px;
@@ -102,7 +104,7 @@ p{
     display: flex; 
     justify-content: space-between;
     align-items: center;
-    background-color: gainsboro;
+    background-color: rgb(163, 177, 138);
 }
 .header-text{
     justify-items: right;
