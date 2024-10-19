@@ -124,11 +124,13 @@ body{
 .buscador-prop {
     text-align: center;
     margin: 20px 0;
+    padding: 20px;
 }
 
 .buscador-prop h2 {
     font-size: 2rem;
     margin-bottom: 10px;
+    padding: 20px;
 }
 
 .buscador-prop form {
@@ -155,4 +157,48 @@ body{
 
 .buscador-prop button:hover {
     background-color: #0056b3;
+}
+
+.prop-section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 50px;
+    justify-content: space-between;
+    background-color: rgb(163, 177, 138);
+}
+.prop-item{
+    background-color: rgb(147, 161, 122);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 25%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.prop-item img{
+    padding: 20px 0 0 0;
+    width: 300px;
+    height: 300px;
+}
+.prop-item:hover{
+    transform: translateY(-10px);
+}
+.prop-nombre{
+    font-size: 1.5em;
+    margin: 15px 0;
+    color: black;
+}
+.prop-caract{
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 20px;
+    font-size: 1em;
+    color: #555;
+}
+.prop-caract li{
+    margin: 5px 0;
+}
+#Rec{
+    text-align: center;
 }
