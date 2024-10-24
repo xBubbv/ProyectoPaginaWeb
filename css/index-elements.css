@@ -192,7 +192,15 @@ body{
     height: 300px;
 }
 .prop-item:hover{
-    transform: translateY(-10px);
+    
+    transform-style: preserve-3d;
+    /* transform: translateY(-10px); */
+    /* transform: rotate3d(1, 0, 0, 50deg);  /* Equivale a rotateX(50deg) */
+    /* transform: rotate3d(0, 1, 0, 25deg);  /* Equivale a rotateY(25deg) */
+    /* transform: rotate3d(0, 0, 1, 5deg);   /* Equivale a rotateZ(5deg) */
+
+    /* transform: rotate3d(1, 1, 0, 100deg); /* Equivale a rotateX(100deg) rotateY(100deg) */
+    transform: rotateY(360deg); /* Rotación en el eje Y */
 }
 .prop-nombre{
     font-size: 1.5em;
