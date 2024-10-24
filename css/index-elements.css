@@ -114,10 +114,20 @@ body{
     color: #555;
 }
 .cnav{
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    z-index: 1000;
+
     justify-content: center;
     border: 0;
 }
 .cnav a{
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px;
+
     text-decoration: none;
     margin: 20px;
 }
@@ -202,3 +212,4 @@ body{
 #Rec{
     text-align: center;
 }
+
