@@ -102,6 +102,28 @@ nav{
 
 }
 
+.cf{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    h1{
+        padding: 1rem;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.marca{
+    background-color: black;
+    padding: 1rem 0;
+    p{
+        color: white;
+        text-align: center;
+    }
+}
 
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
