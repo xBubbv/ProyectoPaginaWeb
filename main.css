@@ -131,6 +131,18 @@ nav .container-fluid, nav .container-xxl, nav .container-xl, nav .container-lg, 
   text-align: center;
 }
 
+.formu {
+  margin: 5rem;
+  border: 1px solid rgb(147, 161, 122);
+}
+.formu .titulo {
+  background-color: rgb(163, 177, 138);
+  text-align: center;
+}
+.formu form {
+  padding: 1rem;
+}
+
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
