@@ -1,4 +1,26 @@
 @charset "UTF-8";
+/* Elementos generales */
+body {
+  background-color: rgb(218, 215, 205);
+}
+
+/*Elementos comunes */
+#logo {
+  height: 100px;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+#header-row {
+  padding: 0 0 10px 0;
+}
+#header-row .col {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(163, 177, 138);
+}
+
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
