@@ -4,6 +4,18 @@ body {
   background-color: rgb(218, 215, 205);
 }
 
+nav {
+  padding: 0;
+  margin: 0;
+}
+nav .container-fluid, nav .container-xxl, nav .container-xl, nav .container-lg, nav .container-md, nav .container-sm {
+  display: flex;
+  background-color: rgb(163, 177, 138);
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
 /*Elementos comunes */
 #logo {
   height: 100px;
@@ -19,6 +31,23 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(163, 177, 138);
+}
+
+.navbar {
+  padding-top: 0 !important;
+}
+.navbar .container-fluid, .navbar .container-xxl, .navbar .container-xl, .navbar .container-lg, .navbar .container-md, .navbar .container-sm {
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  padding: 10px 0;
+}
+.navbar .container-fluid a, .navbar .container-xxl a, .navbar .container-xl a, .navbar .container-lg a, .navbar .container-md a, .navbar .container-sm a {
+  margin: 0 10px;
+}
+.navbar .container-fluid .btn-primary, .navbar .container-xxl .btn-primary, .navbar .container-xl .btn-primary, .navbar .container-lg .btn-primary, .navbar .container-md .btn-primary, .navbar .container-sm .btn-primary {
+  background-color: rgb(88, 129, 87);
+  border: rgb(88, 129, 87);
 }
 
 /*!

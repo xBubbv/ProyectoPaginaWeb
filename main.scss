@@ -2,6 +2,17 @@
 body{
     background-color: rgb(218, 215, 205);
 }
+nav{
+    padding: 0;
+    margin: 0;
+    .container-fluid{
+        display: flex;
+        background-color: rgb(163, 177, 138);
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+    } 
+}
 /*Elementos comunes */
 #logo{
     height: 100px;
@@ -15,6 +26,22 @@ body{
         justify-content: space-between;
         align-items:center;
         background-color: rgb(163, 177, 138);
+    }
+}
+.navbar{
+    padding-top: 0 !important;
+    .container-fluid{
+        display: flex; 
+        justify-content: center !important;
+        align-items: center;
+        padding: 10px 0;
+        a{
+            margin: 0 10px;
+        }
+        .btn-primary{
+            background-color: rgb(88, 129, 87);
+            border: rgb(88, 129, 87);
+        }
     }
 }
 
