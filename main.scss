@@ -132,9 +132,52 @@ nav{
         background-color: rgb(163, 177, 138);
         text-align: center;
     }
+    .registro{
+        color: rgb(147, 161, 122);
+        text-align: center; 
+    }
     form{
         padding: 1rem;
     }
 }
+
+.reg{
+    margin: 5rem auto;
+    border-radius: 1.25rem;
+    border: 1px solid rgb(147, 161, 122);
+    .titulo{
+        background-color: rgb(163, 177, 138);
+        text-align: center;
+        border-radius: 1.25rem 1.25rem 0 0;
+    }
+    form{
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        .row{
+            display: flex;
+            align-items: center;
+            gap:1rem ;
+            .col-auto{
+                flex: 0 0 auto;
+                width: 100%;
+                text-align: left;
+            }
+            .col{
+                flex: 1;
+                input{
+                    width: 100%;
+                    text-align: left;
+                } 
+            }
+        }
+        .btn-primary{
+            background-color: rgb(88, 129, 87);
+            border: rgb(88, 129, 87);
+        }
+    }
+}
+
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";

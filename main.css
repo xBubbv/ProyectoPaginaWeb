@@ -139,8 +139,50 @@ nav .container-fluid, nav .container-xxl, nav .container-xl, nav .container-lg, 
   background-color: rgb(163, 177, 138);
   text-align: center;
 }
+.formu .registro {
+  color: rgb(147, 161, 122);
+  text-align: center;
+}
 .formu form {
   padding: 1rem;
+}
+
+.reg {
+  margin: 5rem auto;
+  border-radius: 1.25rem;
+  border: 1px solid rgb(147, 161, 122);
+}
+.reg .titulo {
+  background-color: rgb(163, 177, 138);
+  text-align: center;
+  border-radius: 1.25rem 1.25rem 0 0;
+}
+.reg form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.reg form .row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.reg form .row .col-auto {
+  flex: 0 0 auto;
+  width: 100%;
+  text-align: left;
+}
+.reg form .row .col {
+  flex: 1;
+}
+.reg form .row .col input {
+  width: 100%;
+  text-align: left;
+}
+.reg form .btn-primary {
+  background-color: rgb(88, 129, 87);
+  border: rgb(88, 129, 87);
 }
 
 /*!
