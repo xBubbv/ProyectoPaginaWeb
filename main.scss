@@ -80,6 +80,28 @@ nav{
         }
     }
 }
+.propiedades{
+    background-color: rgb(163, 177, 138);
+    .rec{
+        text-align: center;
+        padding: 1rem;
+    }
+    .card{
+        margin: 20px;
+        background-color: rgb(147, 161, 122);
+        align-items: center;
+        img{
+            margin: 1rem;
+            padding: 1rem;
+            border-radius: 0.25rem; 
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+    }
+
+}
+
 
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
