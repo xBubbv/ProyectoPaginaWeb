@@ -49,16 +49,29 @@
         </button>
     </div>
     
-    <section class="buscador-prop">
-        <h2>Busca tu propiedad</h2>
-        <form action="#">
-            <label for="sector">Sector</label>
-            <input type="text" name="sector" placeholder="Ingrese sector">
-            <label for="servicio">Servicio</label>
-            <input type="text" name="servicio" placeholder="Ingrese servicio">
-            <button type="submit">Buscar</button>
+    <div class="container-fluid">
+        <form action="#" class="row">
+
         </form>
-    </section>
+    </div>
+
+    <div class="container buscador-prop">
+        <h2 class="text-center mb-4">Busca tu propiedad</h2>
+        <form action="#" class="row form-prop">
+            <div class="col">
+                <label for="sector" class="form-label">Sector</label>
+                <input type="text" name="sector" id="sector" class="form-control" placeholder="Ingrese sector">
+            </div>
+            <div class="col">
+                <label for="servicio" class="form-label">Servicio</label>
+                <input type="text" name="servicio" id="servicio" class="form-control" placeholder="Ingrese servicio">
+            </div>
+            <div class="col" id="sbmt">
+                <button type="submit" class="btn btn-primary" id="btn-buscar">Buscar</button>
+            </div>
+        </form>
+    </div>
+    
     <div><h1 id="Rec">Recomendaciones</h1></div>
     <section class="prop-section">
         

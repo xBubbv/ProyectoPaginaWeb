@@ -51,5 +51,35 @@ nav{
     position: relative;
 }
 
+.buscador-prop{
+    margin: 3rem 0;
+    padding: 1.5rem;
+    background-color: rgb(207, 207, 207);
+    border-radius: 0.25rem;
+    h2{
+        text-align: center;
+        margin: 0 0 1.5rem 0;
+    }
+    .form-prop{
+        padding: 0 0.5rem;
+        justify-content: center;
+        div{
+            flex: 0 0 calc(30% - 1rem);
+            max-width: calc(30% - 1rem);
+        }
+        #sbmt{
+            display: flex;
+            align-items: end;
+            flex: 0 0 calc(15% - 1rem);
+            max-width: calc(15% - 1rem);
+        }
+        #btn-buscar{
+            background-color: rgb(163, 177, 138);
+            border: rgb(88, 129, 87);
+            width: 100%;
+        }
+    }
+}
+
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
