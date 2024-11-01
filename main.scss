@@ -184,6 +184,49 @@ nav{
     padding: 2rem;
 }
 
+.nos-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 200px; // Altura inicial de la tarjeta
+    transition: all 0.3s ease; // Transición para la expansión
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .descripcion{
+        opacity: 0;
+        max-height: 0;
+        transition: opacity 1s ease, max-height 1s ease;
+        overflow: hidden;
+        padding-top: 10px;
+    }
+    &:hover{
+        .descripcion{
+            opacity: 1;
+            max-height: 200px; // Ajusta según la longitud del texto
+        }
+        .card-title{
+            transform: translateY(-10px); // Efecto de elevación en el título
+        }
+    }
+
+    .card-title{
+        font-size: 1.5rem;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+        margin-bottom: 0;
+    }
+
+    &:hover .card-title {
+        transform: translateY(-10px); // Efecto de elevación en el título
+    }
+}
+
 
 .importante{
     color: red;
