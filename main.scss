@@ -13,6 +13,7 @@ nav{
         margin: 0;
     } 
 }
+
 /*Elementos comunes */
 #logo{
     height: 100px;
@@ -37,10 +38,6 @@ nav{
         padding: 10px 0;
         a{
             margin: 0 10px;
-        }
-        .btn-primary{
-            background-color: rgb(88, 129, 87);
-            border: rgb(88, 129, 87);
         }
     }
 }
@@ -172,10 +169,6 @@ nav{
                 } 
             }
         }
-        .btn-primary{
-            background-color: rgb(88, 129, 87);
-            border: rgb(88, 129, 87);
-        }
     }
 }
 .nos{
@@ -233,3 +226,8 @@ nav{
 }
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
+
+.btn-primary{
+    background-color: rgb(88, 129, 87);
+    border: rgb(88, 129, 87);
+}

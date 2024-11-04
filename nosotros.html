@@ -24,11 +24,58 @@
     
     <nav class="navbar sticky-top">
         <div class="container-fluid">
-            <a href="index.html" class="btn btn-primary">Inicio</a>
-            <a href="login.html" class="btn btn-primary">Registro</a>
-            <a href="nosotros.html" class="btn btn-primary">Nosotros</a>
+            <div class="row w-100 justify-content-between align-items-center">
+                <div class="col-md-6 d-flex justify-content-start">
+                    <a href="index.html" class="btn btn-primary me-2">Inicio</a>
+                    <a href="nosotros.html" class="btn btn-primary">Nosotros</a>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Login
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="index.html" class="row g-3 m-3">
+                    <div class="row mb-3">
+                        <div class="col-auto">
+                            <label for="user" class="col-form-label">Usuario:</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="user" id="user" class="form-control" placeholder="Ingrese su usuario" required>
+                        </div>  
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-auto">
+                            <label for="password" class="col-form-label">Contraseña:</label>
+                        </div>
+                        <div class="col">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese su contraseña" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <input type="submit" value="Entrar" class="btn btn-primary w-10">
+                        </div>
+                    </div>
+                    <div class="col-12 text-center mt-3">
+                        <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
 
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">

@@ -45,10 +45,6 @@ nav .container-fluid, nav .container-xxl, nav .container-xl, nav .container-lg, 
 .navbar .container-fluid a, .navbar .container-xxl a, .navbar .container-xl a, .navbar .container-lg a, .navbar .container-md a, .navbar .container-sm a {
   margin: 0 10px;
 }
-.navbar .container-fluid .btn-primary, .navbar .container-xxl .btn-primary, .navbar .container-xl .btn-primary, .navbar .container-lg .btn-primary, .navbar .container-md .btn-primary, .navbar .container-sm .btn-primary {
-  background-color: rgb(88, 129, 87);
-  border: rgb(88, 129, 87);
-}
 
 .carousel {
   height: 600px !important;
@@ -179,10 +175,6 @@ nav .container-fluid, nav .container-xxl, nav .container-xl, nav .container-lg, 
 .reg form .row .col input {
   width: 100%;
   text-align: left;
-}
-.reg form .btn-primary {
-  background-color: rgb(88, 129, 87);
-  border: rgb(88, 129, 87);
 }
 
 .nos {
@@ -12199,4 +12191,8 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.btn-primary {
+  background-color: rgb(88, 129, 87);
+  border: rgb(88, 129, 87);
 }/*# sourceMappingURL=main.css.map */
