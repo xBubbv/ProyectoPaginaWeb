@@ -64,4 +64,164 @@ p{
 } 
 .elem5 p{
     padding: 10px;
+<<<<<<< HEAD
 }
+=======
+}
+
+/* Nuevos elementos */
+body{
+    background-color: rgb(218, 215, 205);
+}
+.carousel{
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+.slides{
+    display: flex;
+    width: 200%;
+    animation: slide 6s infinite alternate;
+    position: relative;
+}
+.slide{
+    width: 100vw;
+    flex-shrink: 0;
+    position: relative;
+}
+.slide img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+@keyframes slide{
+    0%{transform: translateX(0);}
+    45%{transform: translateX(0);}
+    55%{transform: translateX(-100vw);}
+    100%{transform: translateX(-100vw);}
+}
+.header-content{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(163, 177, 138);
+}
+.header-text{
+    justify-items: right;
+}
+.header-text p{
+    font-size: 1.2rem;
+    color: #555;
+}
+.cnav{
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    z-index: 1000;
+
+    justify-content: center;
+    border: 0;
+}
+.cnav a{
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px;
+
+    text-decoration: none;
+    margin: 20px;
+}
+.buscador-prop {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.buscador-prop h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.buscador-prop form {
+    display: inline-block;
+}
+.buscador-prop label{
+    color: black;
+}
+.buscador-prop input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.buscador-prop button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buscador-prop button:hover {
+    background-color: #0056b3;
+}
+
+.prop-section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 50px;
+    justify-content: space-between;
+    background-color: rgb(163, 177, 138);
+}
+.prop-item{
+    background-color: rgb(147, 161, 122);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 25%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.prop-item img{
+    padding: 20px 0 0 0;
+    width: 300px;
+    height: 300px;
+}
+.prop-item:hover{
+    
+    transform-style: preserve-3d;
+    /* transform: translateY(-10px); */
+    /* transform: rotate3d(1, 0, 0, 50deg);  /* Equivale a rotateX(50deg) */
+    /* transform: rotate3d(0, 1, 0, 25deg);  /* Equivale a rotateY(25deg) */
+    /* transform: rotate3d(0, 0, 1, 5deg);   /* Equivale a rotateZ(5deg) */
+
+    /* transform: rotate3d(1, 1, 0, 100deg); /* Equivale a rotateX(100deg) rotateY(100deg) */
+    transform: rotateY(360deg); /* Rotación en el eje Y */
+}
+.prop-nombre{
+    font-size: 1.5em;
+    margin: 15px 0;
+    color: black;
+}
+.prop-caract{
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 20px;
+    font-size: 1em;
+    color: #555;
+}
+.prop-caract li{
+    margin: 5px 0;
+}
+#Rec{
+    text-align: center;
+}
+
+>>>>>>> phpdev
