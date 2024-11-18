@@ -225,6 +225,22 @@ nav{
     color: red;
 }
 
+/* Asegura que la barra de búsqueda esté centrada en la parte superior */
+.search-container {
+    text-align: center;
+    margin-bottom: 20px; /* Espacio entre la barra de búsqueda y la tabla */
+}
+
+/* Centra la tabla debajo de la barra de búsqueda */
+.table-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.table {
+    width: 100%; /* Asegura que la tabla ocupe el 100% del ancho */
+}
+
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
 
 .btn-primary{
