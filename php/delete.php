@@ -1,13 +1,20 @@
 <?php
-
     include("conexion.php");
 
-    $id = $_GET['id'];
+    if (isset($_GET['id'])) {
+        $userId = $_GET['id'];
 
-    $sql = "DELETE FROM usuarios WHERE id='$id'";
-    $query=mysqli_query($conexion,$sql);
+        $sql = "DELETE FROM usuarios WHERE id = '$userId'";
 
-    if($query){
-        header("Location: panel-de-control.php");
-    }   
+        if (mysqli_query($conexion, $sql)) {
+            header("Location: panel-de-control.php?success=Usuario eliminado correctamente");
+            exit();
+        } else {
+            header("Location: panel-de-control.php?error=Error al eliminar el usuario");
+            exit();
+        }
+    } else {
+        header("Location: panel-de-control.php?error=ID de usuario no proporcionado");
+        exit();
+    }
 ?>
