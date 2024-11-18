@@ -14,6 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f4a108002a.js" crossorigin="anonymous"></script>
     <title>Panel de control</title>
 </head>
 <body>
@@ -55,8 +56,8 @@
                                 <th><?php  echo $row['email']?></th>
                                 <th><?php  echo $row['user']?></th>
                                 <th><?php  echo $row['password']?></th>
-                                <th><a href="editar.php?id=<?php echo $row['id'] ?>" class="btn btn-info">Editar</a></th>
-                                <th><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmModal" data-id="<?php echo $row['id']; ?>">Eliminar</button></th>
+                                <th><a href="editar.php?id=<?php echo $row['id'] ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a></th>
+                                <th><a href="#" class="btn btn-small btn-danger" data-bs-toggle="modal" data-bs-target="#confirmModal" data-id="<?php echo $row['id']; ?>"><i class="fa-solid fa-trash"></i></a></th>
                             </tr>
                         <?php
                             }
@@ -86,10 +87,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"></script>
     <script>
-        // Cuando el modal se muestre, actualizamos el enlace de eliminación
+        // Obtener el botón de eliminación del modal y los enlaces de eliminar
         var confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
-        var modalDeleteBtns = document.querySelectorAll('button[data-bs-target="#confirmModal"]');
+        var modalDeleteBtns = document.querySelectorAll('a[data-bs-target="#confirmModal"]'); // Seleccionamos todos los enlaces que abren el modal
 
+        // Agregar el evento de clic en cada enlace de eliminar
         modalDeleteBtns.forEach(function(btn) {
             btn.addEventListener('click', function() {
                 var userId = this.getAttribute('data-id');  // Obtener el ID del usuario

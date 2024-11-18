@@ -1,12 +1,12 @@
 <?php 
     include("conexion.php");
 
-$id = $_GET['id'];
+    $id = $_GET['id'];
 
-$sql = "SELECT * FROM usuarios WHERE id='$id'";
-$query = mysqli_query($conexion,$sql);
+    $sql = "SELECT * FROM usuarios WHERE id='$id'";
+    $query = mysqli_query($conexion,$sql);
 
-$row = mysqli_fetch_array($query);
+    $row = mysqli_fetch_array($query);
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +19,7 @@ $row = mysqli_fetch_array($query);
 </head>
 <body>
     <div class="container mt-5">
+        <h1>Actualizar datos:</h1>
         <form action="update.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
             <input type="text" class="form-control mb-3" name="name" placeholder="Nombre" value="<?php echo $row['name'] ?>">
