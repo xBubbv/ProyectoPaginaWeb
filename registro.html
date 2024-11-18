@@ -55,64 +55,21 @@
         <div class="row titulo">
             <h1>Registro</h1>
         </div>
-        <form action="index.html" class="row g-3">
-            <div class="col-md-6">
-                <input type="text" id="name" name="name" class="form-control" placeholder="Nombres">
+        <form action="index.html" class="d-flex flex-column align-items-center g-3">
+            <div class="col-md-6 mb-3">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Nombre">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-3">
                 <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Apellidos">
             </div>
-            <div class="col-md-6">
-                <input type="text" id="user" name="user" class="form-control" placeholder="Usuario">
-            </div>
-            <div class="col-md-6">
-                <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña">
-            </div>
-            <div class="col-md-8">
+            <div class="col-md-6 mb-3">
                 <input type="email" id="email" name="email" class="form-control" placeholder="Email">
             </div>
-            <div class="col-md-4">
-                <div class="input-group">
-                    <span class="input-group-text">+56</span>
-                    <input type="text" id="telefono" name="telefono" maxlength="9" pattern="\d{9}" title="Debe ingresar exactamente 9 dígitos" class="form-control" placeholder="Teléfono" required>
-                </div>
+            <div class="col-md-6 mb-3">
+                <input type="text" id="user" name="user" class="form-control" placeholder="Usuario">
             </div>
-            <div class="col-md-6">
-                <label class="form-label">Zona(s) de interés:</label>
-                <div class="form-check">
-                    <input type="checkbox" id="Chimba" name="zona" class="form-check-input">
-                    <label for="Chimba" class="form-check-label">La Chimba</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" id="TierraViva" name="zona" class="form-check-input">
-                    <label for="TierraViva" class="form-check-label">Tierra Viva</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" id="Palomar" name="zona" class="form-check-input">
-                    <label for="Palomar" class="form-check-label">El Palomar</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">Servicio:</label>
-                <div class="form-check">
-                    <input type="radio" id="Arriendo" name="servicio" value="Arriendo" class="form-check-input" checked>
-                    <label for="Arriendo" class="form-check-label">Arriendo</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" id="Compra" name="servicio" value="Compra" class="form-check-input">
-                    <label for="Compra" class="form-check-label">Compra</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <input type="number" name="cantidad" id="cantidad" min="1" max="10" title="Ingrese una cantidad entre 1 y 10" class="form-control" placeholder="Cantidad de personas" required>
-            </div>
-            <div class="col-md-6">
-                <select name="ocupacion" id="ocupacion" class="form-select">
-                    <option selected disabled>Ocupación</option>
-                    <option value="1">Trabajador Dependiente</option>
-                    <option value="2">Trabajador Independiente</option>
-                    <option value="3">Pensionado</option>
-                </select>
+            <div class="col-md-6 mb-3">
+                <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña">
             </div>
             <div class="col-12 text-center">
                 <button type="submit" class="btn btn-primary">Registrar</button>
