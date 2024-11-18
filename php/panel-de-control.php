@@ -18,10 +18,11 @@
     <title>Panel de control</title>
 </head>
 <body>
+    <a href="http://127.0.0.1:5501/index.html" class="btn btn-info me-2 m-4">Volver al inicio</a>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-3">
-                <h1>Ingrese datos:</h1>
+                <h1>Crear registro:</h1>
                 <form action="create.php" method="POST">
                     <input type="text" class="form-control mb-3" name="name" placeholder="Nombre">
                     <input type="text" class="form-control mb-3" name="lastname" placeholder="Apellidos">
