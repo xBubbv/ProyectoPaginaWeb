@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $is_logged_in = isset($_SESSION['username']);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +16,7 @@
     <div class="container-fluid" >
         <div class="row" id="header-row">
             <div class="col">
-                <a href="index.html"><img src="img/logo.png" alt="Logo empresa" id="logo"></a>
+                <a href="index.php"><img src="img/logo.png" alt="Logo empresa" id="logo"></a>
             </div>
             <div class="col"></div>
             <div class="col"></div>
@@ -26,13 +31,24 @@
         <div class="container-fluid">
             <div class="row w-100 justify-content-between align-items-center">
                 <div class="col-md-6 d-flex justify-content-start">
-                    <a href="index.html" class="btn btn-primary me-2">Inicio</a>
+                    <a href="index.php" class="btn btn-primary me-2">Inicio</a>
                     <a href="nosotros.html" class="btn btn-primary">Nosotros</a>
                 </div>
                 <div class="col-md-6 d-flex justify-content-end">
-                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        Login
-                    </button>
+                    <?php if ($is_logged_in): ?>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                <?php echo htmlspecialchars($_SESSION['username']); ?>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                                <li><a class="dropdown-item" href="php/logout.php">Cerrar sesión</a></li>
+                            </ul>
+                        </div>
+                    <?php else: ?>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            Login
+                        </button>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -46,7 +62,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="index.html" class="row g-3 m-3">
+                <form action="php/login.php" method="POST" class="row g-3 m-3">
                     <div class="row mb-3">
                         <div class="col-auto">
                             <label for="user" class="col-form-label">Usuario:</label>
@@ -69,7 +85,7 @@
                         </div>
                     </div>
                     <div class="col-12 text-center mt-3">
-                        <p>¿No tienes una cuenta? <a href="http://localhost/ProyectoPaginaWeb/registro.php">Regístrate aquí</a></p>
+                        <p>¿No tienes una cuenta? <a href="registro.php">Regístrate aquí</a></p>
                     </div>
                 </form>
             </div>

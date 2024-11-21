@@ -45,7 +45,7 @@
     <div class="container-fluid" >
         <div class="row" id="header-row">
             <div class="col">
-                <a href="index.html"><img src="img/logo.png" alt="Logo empresa" id="logo"></a>
+                <a href="http://localhost/ProyectoPaginaWeb/index.php"><img src="img/logo.png" alt="Logo empresa" id="logo"></a>
             </div>
             <div class="col"></div>
             <div class="col"></div>
@@ -60,7 +60,7 @@
         <div class="container-fluid">
             <div class="row w-100 justify-content-between align-items-center">
                 <div class="col-md-6 d-flex justify-content-start">
-                    <a href="index.html" class="btn btn-primary me-2">Inicio</a>
+                    <a href="http://localhost/ProyectoPaginaWeb/index.php" class="btn btn-primary me-2">Inicio</a>
                     <a href="nosotros.html" class="btn btn-primary">Nosotros</a>
                 </div>
             </div>
