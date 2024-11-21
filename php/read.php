@@ -1,21 +1,21 @@
 <?php
     include("conexion.php");
 
-    // Obtener el término de búsqueda
+    
     $search = isset($_POST['search']) ? $_POST['search'] : '';
 
-    // Modificar la consulta para incluir la búsqueda por nombre
+    
     if ($search) {
-        // Ajusta el campo de búsqueda según lo que tengas en tu base de datos
-        $sql = "SELECT * FROM usuarios WHERE name LIKE '%$search%'";  // Asegúrate de que 'name' sea el nombre de la columna en tu base de datos
+        
+        $sql = "SELECT * FROM usuarios WHERE name LIKE '%$search%'";  
     } else {
-        $sql = "SELECT * FROM usuarios";  // Si no hay búsqueda, mostrar todos los usuarios
+        $sql = "SELECT * FROM usuarios"; 
     }
 
-    // Ejecutar la consulta
+   
     $query = mysqli_query($conexion, $sql);
 
-    // Verificar si hay resultados
+   
     if (mysqli_num_rows($query) > 0) {
         while ($row = mysqli_fetch_array($query)) {
             echo "<tr>";

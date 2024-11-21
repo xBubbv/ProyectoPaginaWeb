@@ -10,9 +10,20 @@
     
 </head>
 <body>
-    <a href="insertar-registro.php" class="btn btn-info me-2 m-4">Ingresar registro</a>
+    <a href="create-registro.php" class="btn btn-info me-2 m-4">Ingresar registro</a>
     <div class="container mt-5">
         <div class="row">
+            <?php if (isset($_GET['success'])): ?>
+                <div class="alert alert-success">
+                    <?php echo $_GET['success']; ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if (isset($_GET['error'])): ?>
+                <div class="alert alert-danger">
+                    <?php echo $_GET['error']; ?>
+                </div>
+            <?php endif; ?>
             <div class="col-md-12 search-container">
                 <h1>Buscar por nombre:</h1>
                 <form id="searchForm" class="d-flex justify-content-center">
