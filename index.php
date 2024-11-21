@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="/css/index.css"> -->
     <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/svg+xml" href="img/iconos/house-solid.svg">
     <title>Inicio</title>
 </head>
 <body>
