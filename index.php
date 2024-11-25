@@ -48,7 +48,7 @@
             <div class="row w-100 justify-content-between align-items-center">
                 <div class="col-md-6 d-flex justify-content-start">
                     <a href="index.php" class="btn btn-primary me-2">Inicio</a>
-                    <a href="nosotros.html" class="btn btn-primary">Nosotros</a>
+                    <a href="nosotros.php" class="btn btn-primary">Nosotros</a>
                 </div>
                 <div class="col-md-6 d-flex justify-content-end">
                     <?php if ($is_logged_in): ?>

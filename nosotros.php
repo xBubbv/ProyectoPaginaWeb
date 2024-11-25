@@ -1,3 +1,22 @@
+<?php
+    session_start();
+    $is_logged_in = isset($_SESSION['username']);
+?>
+
+<?php
+    // Determinar el mensaje según el parámetro 'status' en la URL
+    $message = '';
+    if (isset($_GET['status'])) {
+        if ($_GET['status'] === 'success') {
+            $message = "¡Tu contraseña ha sido actualizada exitosamente!";
+        } elseif ($_GET['status'] === 'error') {
+            $message = "Hubo un error al actualizar tu contraseña. Inténtalo nuevamente.";
+        } elseif ($_GET['status'] === 'error_correo') {
+            $message = "Correo no registrado en la base de datos.";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,7 +25,7 @@
     <!-- <link rel="stylesheet" href="/css/nosotros.css"> -->
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/svg+xml" href="img/iconos/users-solid.svg">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <title>Nosotros</title>
 </head>
 <body>
@@ -29,12 +48,23 @@
             <div class="row w-100 justify-content-between align-items-center">
                 <div class="col-md-6 d-flex justify-content-start">
                     <a href="index.php" class="btn btn-primary me-2">Inicio</a>
-                    <a href="nosotros.html" class="btn btn-primary">Nosotros</a>
+                    <a href="nosotros.php" class="btn btn-primary">Nosotros</a>
                 </div>
                 <div class="col-md-6 d-flex justify-content-end">
-                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        Login
-                    </button>
+                    <?php if ($is_logged_in): ?>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                <?php echo htmlspecialchars($_SESSION['username']); ?>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                                <li><a class="dropdown-item" href="php/logout.php">Cerrar sesión</a></li>
+                            </ul>
+                        </div>
+                    <?php else: ?>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            Login
+                        </button>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -48,20 +78,20 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="index.php" class="row g-3 m-3">
+                <form action="php/login.php" method="POST" class="row g-3 m-3">
                     <div class="row mb-3">
-                        <div class="col-auto">
-                            <label for="user" class="col-form-label">Usuario:</label>
-                        </div>
-                        <div class="col">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-person"></i>
+                            </span>
                             <input type="text" name="user" id="user" class="form-control" placeholder="Ingrese su usuario" required>
-                        </div>  
+                        </div> 
                     </div>
                     <div class="row mb-3">
-                        <div class="col-auto">
-                            <label for="password" class="col-form-label">Contraseña:</label>
-                        </div>
-                        <div class="col">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-lock"></i>
+                            </span>
                             <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese su contraseña" required>
                         </div>
                     </div>
@@ -71,11 +101,64 @@
                         </div>
                     </div>
                     <div class="col-12 text-center mt-3">
+                        <p>¿Olvidaste tu contraseña?
+                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#recoverModal">
+                                Recuperar
+                            </button>
+                        </p>
+                        <hr>
                         <p>¿No tienes una cuenta? <a href="registro.php">Regístrate aquí</a></p>
                     </div>
                 </form>
             </div>
           </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="recoverModal" tabindex="-1" aria-labelledby="recoverModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Recuperar contraseña:</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="php/recovery.php" method="POST" class="row g-3 m-3">
+                    <div class="row mb-3">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-envelope"></i>
+                            </span>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Ingrese su email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <input type="submit" value="Enviar" class="btn btn-primary w-10">
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="statusModal" tabindex="-1" aria-labelledby="statusModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="statusModalLabel">Recuperación de Contraseña</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <?php echo $message; ?>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -214,99 +297,20 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <div class="c-nosotros1">
-        <div class="lside">
-            <div><img src="img/m1.jpg" alt="Manos"></div>
-            <div><img src="img/m2.webp" alt="Agente"></div>
-            <div><img src="img/m3.jpg" alt="Familia"></div>
-        </div>
-        <div class="content">
-            <h1>Misión:</h1>
-            <p>Nuestra misión es brindar un servicio de corretaje de propiedades confiable y personalizado, orientado a satisfacer las necesidades tanto de compradores como de vendedores. A través de un equipo altamente capacitado y comprometido, buscamos facilitar transacciones inmobiliarias seguras y ágiles, asegurando que cada cliente encuentre la mejor solución según sus intereses y expectativas. Nos esforzamos en construir relaciones de confianza basadas en la transparencia, la integridad y el acompañamiento continuo en cada etapa del proceso.</p>
-            <p>Además, nos enfocamos en mantenernos actualizados con las tendencias del mercado inmobiliario, implementando herramientas tecnológicas innovadoras que optimicen la experiencia del cliente. Nuestro compromiso es ofrecer asesoría integral, minimizando riesgos y maximizando oportunidades para que nuestros clientes logren sus objetivos inmobiliarios con seguridad y tranquilidad.</p>
-        </div>
-        <div class="rside">
-            <div><img src="img/m4.jpg" alt="Reunion"></div>
-            <div><img src="img/m5.jpg" alt="Planos"></div>
-            <div><img src="img/m6.webp" alt="Tecnologia"></div>
-        </div>
-    </div>
-    <div class="c-nosotros2">
-        <div>
-            <img src="img/t1.jpg" alt="">
-            <h1>Carlos Soto</h1>
-            <p>Carlos es un agente de propiedades dinámico y eficiente, con más de 8 años de experiencia en el sector. Su conocimiento profundo del mercado inmobiliario y su habilidad para cerrar acuerdos de manera rápida y efectiva lo hacen un aliado clave tanto para compradores como para vendedores en busca de optimizar sus inversiones.</p>
-        </div>
-        <div>
-            <img src="img/t2.jpg" alt="">
-            <h1>María González</h1>
-            <p>María es una agente inmobiliaria con más de 10 años de experiencia en el mercado. Su enfoque está en brindar un servicio personalizado, escuchando atentamente las necesidades de sus clientes para guiarlos en cada paso del proceso. Su compromiso y conocimiento del mercado local la han convertido en una experta en la compra-venta de propiedades residenciales.</p>
-        </div>
-        <div>
-            <img src="img/t3.jpg" alt="">
-            <h1>Tyson Zenn</h1>
-            <p>Con un enfoque orientado a los resultados, Juan ha ayudado a cientos de familias a encontrar la propiedad perfecta. Su profesionalismo y habilidades en ventas lo han posicionado como uno de los mejores agentes de la región, destacándose por su cercanía y la confianza que genera en cada cliente.</p>
-        </div>
-        <div>
-            <img src="img/t4.jpg" alt="">
-            <h1>Laura Ramírez</h1>
-            <p>Laura es conocida por su capacidad de negociación y su pasión por ayudar a sus clientes a encontrar su hogar ideal. Con una sólida formación en administración de bienes raíces, se especializa en propiedades comerciales y residenciales, ofreciendo asesoría clara y precisa que permite a sus clientes tomar decisiones informadas.</p>
-        </div>
-    </div>
-    <div class="c-nosotros3">
-        <div class="c-img">
-            <div class="v-img">
-                <img src="img/v1.jpg" alt="Ciudad1">
-                <p>Conectamos familias con el hogar que siempre soñaron, cuidando cada detalle en el proceso.</p>
-            </div>
-    
-            <div class="v-img">
-                <img src="img/v2.jpg" alt="Ciudad2">
-                <p>Confianza y profesionalismo en cada trato, acompañándote en cada paso hacia tu nueva propiedad.</p>
-            </div>
-        </div>
-        <div class="texto">
-            <h1>Visión:</h1>
-            <p>En nuestra empresa de corretaje de propiedades, nuestro compromiso es ofrecer un servicio <span class="importante">personalizado</span> que se adapte a las necesidades y sueños de cada cliente. Creemos firmemente que cada propiedad tiene un valor único y que encontrar el hogar adecuado es más que una transacción, es una experiencia que transforma vidas. Nos esforzamos por crear un vínculo cercano con nuestros clientes, guiándolos en cada paso del camino y asegurándonos de que se sientan apoyados en todo momento.</p>
-            <p>Nuestro objetivo es ser reconocidos como un referente de <span class="importante">confianza</span> en el mercado inmobiliario, destacándonos por nuestra transparencia, profesionalismo y enfoque en soluciones eficientes. Buscamos no solo cumplir, sino superar las expectativas de nuestros clientes, creando relaciones a largo plazo basadas en la satisfacción y la integridad. Cada cliente, cada propiedad y cada historia que conectamos es una nueva oportunidad para fortalecer nuestra visión de liderazgo en el corretaje de propiedades.</p>
-        </div>
-    </div>
-    <div class="c-mapa">
-        <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3423.116036363432!2d-70.34747398202651!3d-27.349731968685393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x969803aa90994d7b%3A0x5bf6f83f2c7b5135!2sStripCenter%20Portal%20La%20Chimba!5e0!3m2!1ses-419!2scl!4v1729483267986!5m2!1ses-419!2scl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="info">
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre">
-            <input type="text" name="email" id="email" placeholder="Correo Electronico">
-            <input type="text" name="asunto" id="asunto" placeholder="Asunto">
-            <input type="text" name="mensaje" id="comentario" placeholder="Mensaje">
-        </div>
-    </div>
-    
-    </div>
-    <footer>
-        <div class="c-footer">
-            <div>
-                <a href="#">
-                    <img src="img/correo.png" alt="">
-                    <p>Correo</p>
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="img/puntero.png" alt="">
-                    <p>Ubicación</p>
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="img/telefono.png" alt="">
-                    <p>Teléfono</p>
-                </a>
-            </div>
-        </div>
-        <div id="marca">
-            <p >&copy; 2024 Diego Vargas</p>
-    </footer> -->
+    <script>
+        const statusMessage = "<?php echo $message; ?>";
+        if (statusMessage) {
+            const statusModal = new bootstrap.Modal(document.getElementById('statusModal'));
+            statusModal.show();
+
+            const modalElement = document.getElementById('statusModal');
+            modalElement.addEventListener('hidden.bs.modal', () => {
+                // Eliminar el parámetro 'status' de la URL
+                const url = new URL(window.location.href);
+                url.searchParams.delete('status');
+                window.history.replaceState({}, document.title, url);
+            });
+        }
+    </script>
 </body>
 </html>
