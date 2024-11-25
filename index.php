@@ -3,6 +3,20 @@
     $is_logged_in = isset($_SESSION['username']);
 ?>
 
+<?php
+    // Determinar el mensaje según el parámetro 'status' en la URL
+    $message = '';
+    if (isset($_GET['status'])) {
+        if ($_GET['status'] === 'success') {
+            $message = "¡Tu contraseña ha sido actualizada exitosamente!";
+        } elseif ($_GET['status'] === 'error') {
+            $message = "Hubo un error al actualizar tu contraseña. Inténtalo nuevamente.";
+        } elseif ($_GET['status'] === 'error_correo') {
+            $message = "Correo no registrado en la base de datos.";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,6 +25,7 @@
     <!-- <link rel="stylesheet" href="/css/index.css"> -->
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/svg+xml" href="img/iconos/house-solid.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <title>Inicio</title>
 </head>
 <body>
@@ -65,18 +80,18 @@
             <div class="modal-body">
                 <form action="php/login.php" method="POST" class="row g-3 m-3">
                     <div class="row mb-3">
-                        <div class="col-auto">
-                            <label for="user" class="col-form-label">Usuario:</label>
-                        </div>
-                        <div class="col">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-person"></i>
+                            </span>
                             <input type="text" name="user" id="user" class="form-control" placeholder="Ingrese su usuario" required>
-                        </div>  
+                        </div> 
                     </div>
                     <div class="row mb-3">
-                        <div class="col-auto">
-                            <label for="password" class="col-form-label">Contraseña:</label>
-                        </div>
-                        <div class="col">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-lock"></i>
+                            </span>
                             <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese su contraseña" required>
                         </div>
                     </div>
@@ -86,6 +101,12 @@
                         </div>
                     </div>
                     <div class="col-12 text-center mt-3">
+                        <p>¿Olvidaste tu contraseña?
+                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#recoverModal">
+                                Recuperar
+                            </button>
+                        </p>
+                        <hr>
                         <p>¿No tienes una cuenta? <a href="registro.php">Regístrate aquí</a></p>
                     </div>
                 </form>
@@ -93,6 +114,54 @@
           </div>
         </div>
     </div>
+
+    <div class="modal fade" id="recoverModal" tabindex="-1" aria-labelledby="recoverModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Recuperar contraseña:</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="php/recovery.php" method="POST" class="row g-3 m-3">
+                    <div class="row mb-3">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-envelope"></i>
+                            </span>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Ingrese su email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <input type="submit" value="Enviar" class="btn btn-primary w-10">
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="statusModal" tabindex="-1" aria-labelledby="statusModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="statusModalLabel">Recuperación de Contraseña</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <?php echo $message; ?>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -249,5 +318,20 @@
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const statusMessage = "<?php echo $message; ?>";
+        if (statusMessage) {
+            const statusModal = new bootstrap.Modal(document.getElementById('statusModal'));
+            statusModal.show();
+
+            const modalElement = document.getElementById('statusModal');
+            modalElement.addEventListener('hidden.bs.modal', () => {
+                // Eliminar el parámetro 'status' de la URL
+                const url = new URL(window.location.href);
+                url.searchParams.delete('status');
+                window.history.replaceState({}, document.title, url);
+            });
+        }
+    </script>
 </body>
 </html>
